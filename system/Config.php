@@ -2,7 +2,7 @@
 
 $config['version'] = 'v0.0.1';
 
-$config['main_class'] = 'main';
+$config['main_class'] = 'Main';
 
 $config['main_method'] = 'index';
 

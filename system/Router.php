@@ -64,13 +64,13 @@ class Router
 
 		if($uri === '')
 		{
-			$class = 'index';
-			$method = 'index';
+			$class  = config_item('main_class');
+			$method = config_item('main_method');
 		}
 		elseif(strpos($uri, '/') === false)
 		{
 			$class = strtolower($uri);
-			$method = 'index';
+			$method = config_item('main_method');
 		}
 		else
 		{

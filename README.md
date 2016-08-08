@@ -2,7 +2,7 @@
 
 Service-oriented php framework
 
-##### usage
+#### usage
 
 > load view
 
@@ -24,7 +24,7 @@ Service-oriented php framework
 	$this->User_model->get_user();
 ```
 
-##### to do list
+#### todo list
 
 * log
 
@@ -44,6 +44,6 @@ Service-oriented php framework
 
 * security 
 
-...
+* ...
 
 i need you 

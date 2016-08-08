@@ -123,3 +123,34 @@ if (! function_exists('is_loaded'))
 		return $_is_loaded;
 	}
 }
+
+/**
+ * 获取配置
+ *
+ * Function description
+ *
+ * @access	public
+ * @param	type	name
+ * @return	type	
+ */
+ 
+if (! function_exists('config_item'))
+{
+	function config_item($item = '')
+	{
+		include(SYSPATH.'Config.php');
+
+		if( ! isset($config)){
+			return array();
+		}
+
+		if( $item !== '' && isset($config[$item])){
+			return $config[$item];
+		} else {
+			return '';
+		}
+
+		return $config;
+		
+	}
+}
