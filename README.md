@@ -23,3 +23,27 @@ Service-oriented php framework
 	$this->load->model('User_model');
 	$this->User_model->get_user();
 ```
+
+##### to do list
+
+* log
+
+* support composer
+
+* database driver
+
+* Benchmark
+
+* phpunit test ( composer )
+
+* hook
+
+* common library   eg : page , image ...
+
+* cache
+
+* security 
+
+...
+
+i need you 

@@ -1,10 +1,10 @@
 <?php 
-if( ! preg_match("/^127./", $_SERVER['REMOTE_ADDR'])) exit('system update...');
-
-@date_default_timezone_set("Asia/Shanghai");
 /**
  * mini框架
  */
+// if( ! preg_match("/^127./", $_SERVER['REMOTE_ADDR'])) exit('system update...');
+
+@date_default_timezone_set("Asia/Shanghai");
 
 /**
  * 环境定义
@@ -29,8 +29,6 @@ case 'production':
 define('BASEPATH' ,__dir__.'/');
 
 define('SYSPATH' ,__dir__.'/system/');
-
-define('APPPATH' ,__dir__.'/application/');
 
 require SYSPATH.'/miniframework.php';
 

@@ -6,9 +6,11 @@
 class Router
 {
 
-	private $class = '';
+	private $class  = '';
 
 	private $method = 'index';
+
+	private $params = array();
 
 	function __construct()
 	{
@@ -23,6 +25,11 @@ class Router
 	public function getMethod()
 	{
 		return $this->method;
+	}
+
+	public function getParams()
+	{
+		return $this->params;
 	}
 
 	private function _fetch_class_method()
@@ -42,7 +49,7 @@ class Router
 		}
 
 		// http://dummy/index.php/hello/word?foo=bar&foo1=bar1
-		// array (size=4)
+		// uri => array (size=4)
 		// 'scheme' => string 'http' (length=4)
 		// 'host' => string 'dummy' (length=5)
 		// 'path' => string '/basecode/index.php/hello/word' (length=30)

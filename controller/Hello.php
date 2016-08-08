@@ -14,9 +14,10 @@ class Hello extends Controller
 
 	public function world()
 	{
-		// $this->load->service('Tool_service');
-		// $this->Tool_service->hello_service();
 
-		$this->load->view('home', array('foo'=>'this main page'));
+		$this->load->service('Tool_service');
+		$bar = $this->Tool_service->hello();
+		
+		$this->load->view('home', array('foo' => $bar));
 	}
 }

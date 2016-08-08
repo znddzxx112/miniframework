@@ -13,7 +13,7 @@ require SYSPATH.'common.php';
 /**
  * 加载配置文件
  */
-include(SYSPATH.'config.php');
+include(SYSPATH.'Config.php');
 if( ! isset($config)){
 	exit('config not exits');
 }
@@ -31,7 +31,7 @@ $RTR = load_class('router');
 /**
  * 单例函数
  */
-require SYSPATH . 'controller.php';
+require SYSPATH . 'Controller.php';
 function &get_instance()
 {
 	return Controller::get_instance();
@@ -46,6 +46,7 @@ function &get_instance()
  */
 $class = $RTR->getClass();
 $method = $RTR->getMethod();
+$params = $RTR->getParams();
 
 include( $config['controller_path'] . $class . '.php');
 
@@ -54,7 +55,7 @@ $class_instance = new $class();
 /**
  * 执行方法
  */
-call_user_func_array(array(&$class_instance, $method), array());
+call_user_func_array(array(&$class_instance, $method), $params);
 
 
 

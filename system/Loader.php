@@ -15,10 +15,10 @@ class Loader
 	public function service($service = '')
 	{
 		if( ! file_exists(BASEPATH.'service/'.$service.'.php')){
-			show_error('service : '.$service.' not exists');
+			show_error('service : ' . $service . ' not exists');
 		}
 
-		require SYSPATH . 'service.php';
+		require SYSPATH . 'Service.php';
 
 		$ci =& get_instance();
 		$ci->$service = load_class($service ,BASEPATH.'/service/');
@@ -32,7 +32,7 @@ class Loader
 	public function view($view = '', $vars = array())
 	{
 		if( ! file_exists(BASEPATH.'view/'.$view.'.php')) {
-			show_error('view : '.$view.' not exists');
+			show_error('view : '. $view .' not exists');
 		}
 
 		foreach ($vars as $key => $value) {

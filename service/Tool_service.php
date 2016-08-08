@@ -11,8 +11,8 @@ class Tool_service extends service
 		
 	}
 
-	public function hello($value='')
+	public function hello()
 	{
-		echo 'hello service';
+		return 'this main page';
 	}
 }
