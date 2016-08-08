@@ -125,9 +125,8 @@ if (! function_exists('is_loaded'))
 }
 
 /**
- * 获取配置
+ * 获取配置项
  *
- * Function description
  *
  * @access	public
  * @param	type	name
@@ -138,19 +137,20 @@ if (! function_exists('config_item'))
 {
 	function config_item($item = '')
 	{
-		include(SYSPATH.'Config.php');
+		static $_config = array();
 
-		if( ! isset($config)){
-			return array();
+		if( $item === '' && !empty($_config)){
+			return $_config;
 		}
 
-		if( $item !== '' && isset($config[$item])){
-			return $config[$item];
-		} else {
-			return '';
+		include_once(SYSPATH.'Config.php');
+
+		$_config = $config;
+
+		if( $item !== '' && isset($_config[$item])){
+			return $_config[$item];
 		}
 
-		return $config;
-		
+		return $_config;
 	}
 }
