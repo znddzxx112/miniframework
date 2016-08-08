@@ -8,7 +8,7 @@ class Router
 
 	private $class  = '';
 
-	private $method = 'index';
+	private $method = '';
 
 	private $params = array();
 

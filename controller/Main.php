@@ -2,9 +2,9 @@
 
 /**
 * hello class
-* http://127.0.0.1/basecode/index.php/hello/world?foo=bar&foo1=bar1
+* http://127.0.0.1/basecode/index.php/main/index?foo=bar&foo1=bar1
 */
-class Hello extends Controller
+class Main extends Controller
 {
 	
 	function __construct()
@@ -12,12 +12,12 @@ class Hello extends Controller
 		parent::__construct();
 	}
 
-	public function world()
+	public function index()
 	{
 
 		$this->load->service('Tool_service');
 		$bar = $this->Tool_service->hello();
-		
+
 		$this->load->view('home', array('foo' => $bar));
 	}
 }
