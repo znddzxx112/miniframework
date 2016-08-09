@@ -19,6 +19,15 @@
 	}
 
 	/**
+	 * suport composer
+	 */
+	$support_composer = config_item('support_composer');
+	if($support_composer === true)
+	{
+		file_exists(BASEPATH.'vendor/autoload.php') && require_once(BASEPATH.'vendor/autoload.php');
+	}
+
+	/**
 	 * 加载路由类
 	 */
 	$RTR = load_class('router');

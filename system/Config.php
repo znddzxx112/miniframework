@@ -7,3 +7,5 @@ $config['main_class'] = 'Main';
 $config['main_method'] = 'index';
 
 $config['controller_path'] = BASEPATH.'controller/';
+
+$config['support_composer'] = false;#支持composer

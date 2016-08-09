@@ -24,11 +24,19 @@ Service-oriented php framework
 	$this->User_model->get_user();
 ```
 
+> write log
+
+```
+	log_message('error', 'something');
+```
+
+> support composer
+
+```
+	$config['support_composer'] = true; # true:支持composer false:不支持composer
+```
+
 #### todo list
-
-* log
-
-* support composer
 
 * database driver
 

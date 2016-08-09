@@ -21,7 +21,24 @@ class Loader
 		require SYSPATH . 'Service.php';
 
 		$ci =& get_instance();
-		$ci->$service = load_class($service ,BASEPATH.'/service/');
+		$ci->$service =& load_class($service ,BASEPATH.'/service/');
+	}
+
+	/**
+	 * 加载 model
+	 * @param  [type] $model [description]
+	 * @return [type]        [description]
+	 */
+	public function model($model = '')
+	{
+		if( ! file_exists(BASEPATH.'model/'.$model.'.php')){
+			show_error('model : ' . $model . ' not exists');
+		}
+
+		require SYSPATH . 'Model.php';
+
+		$ci =& get_instance();
+		$ci->$model =& load_class($model ,BASEPATH.'/model/');
 	}
 
 	/**

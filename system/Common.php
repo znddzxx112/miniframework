@@ -154,3 +154,64 @@ if (! function_exists('config_item'))
 		return $_config;
 	}
 }
+
+/**
+ * Write Log File
+ *
+ * Generally this function will be called using the global log_message() function
+ *
+ * @access	public
+ * @param	string	the error level: 'error', 'debug' or 'info'
+ * @param	string	the error message
+ * @return	type	
+ */
+ 
+if (! function_exists('log_message'))
+{
+	function log_message($level, $msg)
+	{
+		$level = strtoupper($level);
+
+		$filepath = BASEPATH.'logs/'.date('Y-m-d').'.php';
+		$message = '';
+
+		if ( ! file_exists($filepath))
+		{
+			$newfile = TRUE;
+			// Only add protection to php files
+			if ($this->_file_ext === 'php')
+			{
+				$message .= "<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>\n\n";
+			}
+		}
+
+		if ( ! $fp = @fopen($filepath, 'ab'))
+		{
+			return FALSE;
+		}
+
+		$date = date('Y-m-d H:i:s');
+
+		$message .= $level.' - '.$date.' --> '.$msg."\n";
+
+		flock($fp, LOCK_EX);
+
+		for ($written = 0, $length = strlen($message); $written < $length; $written += $result)
+		{
+			if (($result = fwrite($fp, substr($message, $written))) === FALSE)
+			{
+				break;
+			}
+		}
+
+		flock($fp, LOCK_UN);
+		fclose($fp);
+
+		if (isset($newfile) && $newfile === TRUE)
+		{
+			chmod($filepath, 0644);
+		}
+
+		return is_int($result);
+	}
+}
