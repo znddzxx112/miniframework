@@ -33,7 +33,17 @@ Service-oriented php framework
 > support composer
 
 ```
+	config.php
 	$config['support_composer'] = true; # true:支持composer false:不支持composer
+
+	composer.json
+	requeire packgist
+
+	common command:
+	composer intall
+	composer install --dev # 开发环境
+	composer update
+
 ```
 
 > support Benchmark
@@ -47,11 +57,15 @@ Service-oriented php framework
 	}
 ```
 
+> phpunit
+
+```
+	composer install --dev
+```
+
 #### todo list
 
 * database driver
-
-* phpunit test ( composer )
 
 * hook
 
