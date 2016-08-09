@@ -30,7 +30,7 @@
 	/**
 	 * 加载路由类
 	 */
-	$RTR = load_class('router');
+	$RTR =& load_class('router');
 
 	/**
 	 * 单例函数
@@ -44,6 +44,8 @@
 	/**
 	 * 加载性能类
 	 */
+	$BHK =& load_class('Benchmark');
+	$BHK->mark('pre_controller');
 
 	/**
 	 * 实例化
@@ -64,5 +66,11 @@
 	call_user_func_array(array(&$class_instance, $method), $params);
 
 
-
+	/**
+	 * 性能基准
+	 */
+	$cost_time = $BHK->calc_time('pre_controller','post_controller');
+	if($cost_time > 1000) {
+		log_message('error', $class . $method . '-' . 'cost_time:' . $cost_time);
+	}
 
