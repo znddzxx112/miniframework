@@ -63,9 +63,14 @@ Service-oriented php framework
 	composer install --dev
 ```
 
-#### todo list
+> database  driver - now only support mysql
 
-* database driver
+```
+	$this->load->database();
+	$this->db->query($code, $sql, $bind_param);
+```
+
+#### todo list
 
 * hook
 

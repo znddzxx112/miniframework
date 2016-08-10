@@ -59,4 +59,20 @@ class Loader
 		include(BASEPATH.'view/'.$view.'.php');
 	}
 
+	/**
+	 * 加载 database
+	 * @return [type] [description]
+	 */
+	public function database($pre = 'default')
+	{
+		$_config = config_item();
+
+		if(! isset($_config[$pre]) )
+		{
+			show_error("database config fail");
+		}
+
+		
+	}
+
 }
