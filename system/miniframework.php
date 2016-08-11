@@ -30,7 +30,7 @@
 	/**
 	 * 加载路由类
 	 */
-	$RTR =& load_class('router');
+	$RTR = load_class('router');
 
 	/**
 	 * 单例函数
@@ -44,7 +44,7 @@
 	/**
 	 * 加载性能类
 	 */
-	$BHK =& load_class('Benchmark');
+	$BHK = load_class('Benchmark');
 	$BHK->mark('pre_controller');
 
 	/**

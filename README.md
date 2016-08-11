@@ -67,7 +67,7 @@ Service-oriented php framework
 
 ```
 	$this->load->database();
-	$this->db->query($code, $sql, $bind_param);
+	$this->db->exec($code, $sql, $bind_param);
 ```
 
 #### todo list

@@ -4,7 +4,7 @@
 * mysqli
 * see basecode/mysqlfun/mysqliClient.php
 */
-class Mysqli extends Db
+class Mysqli_drive extends Db
 {
 	
 	/**
@@ -23,7 +23,7 @@ class Mysqli extends Db
 	 * mysqli_stmt对象
 	 * @var null
 	 */
-	private $_mysqli_stmt = null
+	private $_mysqli_stmt = null;
 
 	/**
 	 * mysqli_result对象
@@ -47,14 +47,9 @@ class Mysqli extends Db
 	 * magic functions * 
 	 * *************** */
 
-	public function __construct($host, $username, $passwd, $dbname, $port = 3306)
+	public function __construct()
 	{
-		$this->_mysqli = new \mysqli($host, $username, $passwd, $dbname, $port);
-		if($this->_mysqli->connect_errno){
-			$this->set_error_info($this->_mysqli->connet_error, $this->_mysqli->connect_errno);
-			throw new Exception($this->_mysqli->connet_error, $this->_mysqli->connect_errno);
-		}
-		$this->_pre_func();
+		
 	}
 
 	public function __destruct()
@@ -67,6 +62,16 @@ class Mysqli extends Db
 	/* **************** *
 	 * public functions * 
 	 * **************** */
+
+	public function init($host, $username, $passwd, $dbname, $port = 3306)
+	{
+		$this->_mysqli = new \mysqli($host, $username, $passwd, $dbname, $port);
+		if($this->_mysqli->connect_errno){
+			$this->set_error_info($this->_mysqli->connet_error, $this->_mysqli->connect_errno);
+			throw new Exception($this->_mysqli->connet_error, $this->_mysqli->connect_errno);
+		}
+		$this->_pre_func();
+	}
 
 	/**
 	 * 执行语句

@@ -15,7 +15,7 @@ class Benchmark
 	 */
 	public function mark($point = '')
 	{
-		$this->$marks[$point] = microtime(true);
+		$this->marks[$point] = microtime(true);
 	}
 
 	/**
@@ -26,17 +26,17 @@ class Benchmark
 	 */
 	public function calc_time($point1 = '', $point2 = '')
 	{
-		if( ! isset($this->$marks[$point1]))
+		if( ! isset($this->marks[$point1]))
 		{
 			return '';
 		}
 
-		if( ! isset($this->$marks[$point2]))
+		if( ! isset($this->marks[$point2]))
 		{
 			$this->mark($point2);
 		}
 
-		return number_format($this->$marks[$point2] - $this->$marks[$point1], 4);
+		return number_format($this->marks[$point2] - $this->marks[$point1], 4);
 	}
 	
 }

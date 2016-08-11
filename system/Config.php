@@ -16,5 +16,5 @@ $config['default']['drive'] = 'mysqli';
 $config['default']['host'] = '127.0.0.1';
 $config['default']['username'] = "root";
 $config['default']['passwd'] = "";
-$config['default']['dbname'] = "";
+$config['default']['dbname'] = "caocms";
 $config['default']['port'] = "3306";

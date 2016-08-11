@@ -20,4 +20,11 @@ class Main extends Controller
 
 		$this->load->view('home', array('foo' => $bar));
 	}
+
+	public function database($value='')
+	{
+		$this->load->database();
+		$result = $this->db->exec("100100", "select * from `b_user`", array());
+		var_dump($result);
+	}
 }

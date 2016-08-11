@@ -143,7 +143,7 @@ if (! function_exists('config_item'))
 			return $_config;
 		}
 
-		include_once(SYSPATH.'Config.php');
+		include(SYSPATH.'Config.php');
 
 		$_config = $config;
 

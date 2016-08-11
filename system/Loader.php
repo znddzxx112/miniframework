@@ -72,7 +72,12 @@ class Loader
 			show_error("database config fail");
 		}
 
-		
+		require SYSPATH . 'Db.php';
+
+		$ci =& get_instance();
+		$ci->db = load_class('Mysqli_drive' ,SYSPATH.'/database/');
+
+		$ci->db->init($_config[$pre]['host'], $_config[$pre]['username'], $_config[$pre]['passwd'], $_config[$pre]['dbname'], $_config[$pre]['port']);
 	}
 
 }
