@@ -48,6 +48,14 @@
 	$BHK->mark('pre_controller');
 
 	/**
+	 * 加载 系统扩展
+	 */
+	$EXT = load_class('Hooks');
+
+	// 执行 pre_controller
+	$EXT->call_hook('pre_controller');
+
+	/**
 	 * 实例化
 	 */
 	$class = $RTR->getClass();
@@ -65,6 +73,9 @@
 	 */
 	call_user_func_array(array(&$class_instance, $method), $params);
 
+
+	// 执行 post_controller
+	$EXT->call_hook('post_controller');
 
 	/**
 	 * 性能基准

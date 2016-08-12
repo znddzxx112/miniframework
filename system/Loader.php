@@ -21,7 +21,7 @@ class Loader
 		require SYSPATH . 'Service.php';
 
 		$ci =& get_instance();
-		$ci->$service =& load_class($service ,BASEPATH.'/service/');
+		$ci->$service = load_class($service ,BASEPATH.'/service/');
 	}
 
 	/**

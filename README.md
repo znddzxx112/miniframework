@@ -69,10 +69,30 @@ Service-oriented php framework
 	$this->load->database();
 	$this->db->exec($code, $sql, $bind_param);
 ```
+> hook
+
+```
+	config.php:
+	$config['pre_controller_enable'] = false;
+	$config['pre_controller'] = array(
+								'class'    => 'Base_hook',
+							    'function' => 'hello',
+							    'filename' => 'Base_hook.php',
+							    'filepath' => BASEPATH.'hooks/',
+							    'params'   => array('beer', 'wine', 'snacks')
+							);
+	
+	$config['post_controller_enable'] = false;
+	$config['post_controller'] =  array(
+								'class'    => 'Base_hook',
+							    'function' => 'hello',
+							    'filename' => 'Base_hook.php',
+							    'filepath' => BASEPATH.'hooks/',
+							    'params'   => array('beer', 'wine', 'snacks')
+							);
+```
 
 #### todo list
-
-* hook
 
 * common library   eg : page , image ...
 

@@ -12,7 +12,7 @@
  
 if (! function_exists('load_class'))
 {
-	function load_class($class = '', $folder = SYSPATH)
+	function &load_class($class = '', $folder = SYSPATH)
 	{
 		static $classes;
 
