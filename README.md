@@ -92,9 +92,16 @@ Service-oriented php framework
 							);
 ```
 
+> library
+
+```
+	$this->load->library('Pagination');
+	$this->Pagination->initialize($param);
+```
+
 #### todo list
 
-* common library   eg : page , image ...
+* common library   eg : image ...
 
 * cache
 
@@ -103,3 +110,8 @@ Service-oriented php framework
 * ...
 
 i need you 
+
+
+#### library list
+
+* pagination
