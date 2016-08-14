@@ -27,4 +27,10 @@ class Main extends Controller
 		$result = $this->db->exec("100100", "select * from `b_user`", array());
 		var_dump($result);
 	}
+
+	public function im()
+	{
+		$this->load->library('Seccode');
+		$this->Seccode->show();
+	}
 }

@@ -101,7 +101,7 @@ Service-oriented php framework
 
 #### todo list
 
-* common library   eg :user_agent, cache, image, cart ,encrytion, validation, parse, zip ...
+* common library   eg :user_agent, cache, image, cart ,encrytion, validation, parse ...
 
 * service  call run notify ... functions
 
@@ -117,3 +117,7 @@ i need you
 * pagination
 
 * configure
+
+* zip
+
+* seccode
