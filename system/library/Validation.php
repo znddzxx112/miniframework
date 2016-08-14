@@ -53,6 +53,7 @@ class Validation
 				}
 			}
 		}
+		return $this;
 	}
 
 	/**

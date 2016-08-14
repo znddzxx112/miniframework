@@ -99,19 +99,6 @@ Service-oriented php framework
 	$this->Pagination->initialize($param);
 ```
 
-#### todo list
-
-* common library   eg :user_agent, cache, image, cart ,encrytion, validation, parse ...
-
-* service  call run notify ... functions
-
-* security input,output
-
-* ...
-
-i need you 
-
-
 #### library list
 
 * pagination
@@ -121,3 +108,31 @@ i need you
 * zip
 
 * seccode
+
+* validation
+
+```
+	$this->load->library('Validation');
+	$valid_res = $this->Validation->initialize(array('left_div'=>' ','right_div'=>' '))
+								->set_data(array('post_data'=>'123'))
+								->set_rules('post_data', 'test_data', 'integer')
+								->run();
+	if($valid_res == false){ // valid error msg
+		echo $this->Validation->get_error_message();
+	}
+```
+
+
+#### todo list
+
+* common library   eg :user_agent, cache, image, cart , encrytion, parse ...
+
+* service  call run notify ... functions
+
+* security input,output
+
+* ...
+
+join me :)
+
+
