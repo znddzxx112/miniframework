@@ -94,9 +94,11 @@ Service-oriented php framework
 
 #### todo list
 
+* service func: notify , 
+
 * common library   eg : page , image ...
 
-* cache
+* filecache
 
 * security 
 

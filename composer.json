@@ -3,7 +3,7 @@
     "description": "Service-oriented php framework",
     "type": "project",
     "require": {
-
+        "fguillot/json-rpc" : "v1.2.1"
     },
     "require-dev": {
         "phpunit/phpunit": "4.8.26"
@@ -14,6 +14,5 @@
             "name": "znddzxx112",
             "email": "znddzxx112@163.com"
         }
-    ],
-    "minimum-stability": "dev"
+    ]
 }
