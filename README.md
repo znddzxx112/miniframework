@@ -110,15 +110,15 @@ Service-oriented php framework
 
 #### library list
 
-* pagination
+* Pagination
 
-* configure
+* Configure
 
-* zip
+* Zip
 
-* seccode
+* Seccode
 
-* validation
+* Validation
 
 ```
 	$this->load->library('Validation');
@@ -131,14 +131,18 @@ Service-oriented php framework
 	}
 ```
 
+* Security
+```
+	$this->load->library('Security');
+	$this->Security->xss_clean($str);
+```
+
 
 #### todo list
 
-* common library   eg :user_agent, cache, image, cart , encrytion, parse ...
+* common library   eg :user_agent, filecache, image, cart , encrytion, parse, redisclient ...
 
 * service  call run notify ... functions
-
-* security
 
 * ...
 
