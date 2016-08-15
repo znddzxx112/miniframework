@@ -7,6 +7,11 @@
 class Loader
 {
 
+	public function __construct()
+	{
+		$this->_autoload();
+	}
+
 	/**
 	 * 加载 service
 	 * @param  string $service [description]
@@ -94,6 +99,23 @@ class Loader
 		}
 		$ci =& get_instance();
 		$ci->$library = load_class($library, SYSPATH . 'library' . '/');
+	}
+
+
+	// -------------------------------------------------------------------
+	
+
+	private function _autoload()
+	{
+		$autoload_class = config_item('autoload_class');
+
+		$ci =& get_instance();
+
+		foreach ($autoload_class as $class) 
+		{
+			require SYSPATH . ucfirst($class) . '.php';
+			$ci->$class = load_class($class);
+		}
 	}
 
 }

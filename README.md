@@ -99,6 +99,15 @@ Service-oriented php framework
 	$this->Pagination->initialize($param);
 ```
 
+> support autoload
+
+```
+	config.php:
+	$config['autoload_class'] = array('input');
+
+	$bar = $this->input->post('foo'); // get post data
+```
+
 #### library list
 
 * pagination
@@ -129,7 +138,7 @@ Service-oriented php framework
 
 * service  call run notify ... functions
 
-* security input,output
+* security
 
 * ...
 

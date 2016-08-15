@@ -37,3 +37,6 @@ $config['post_controller'] =  array(
 						    'filepath' => BASEPATH.'hooks/',
 						    'params'   => array('beer', 'wine', 'snacks')
 						);
+
+# autoload
+$config['autoload_class'] = array('input');
