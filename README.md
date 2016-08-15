@@ -92,16 +92,47 @@ Service-oriented php framework
 							);
 ```
 
+> library
+
+```
+	$this->load->library('Pagination');
+	$this->Pagination->initialize($param);
+```
+
+#### library list
+
+* pagination
+
+* configure
+
+* zip
+
+* seccode
+
+* validation
+
+```
+	$this->load->library('Validation');
+	$valid_res = $this->Validation->initialize(array('left_div'=>' ','right_div'=>' '))
+								->set_data(array('post_data'=>'123'))
+								->set_rules('post_data', 'test_data', 'integer')
+								->run();
+	if($valid_res == false){ // valid error msg
+		echo $this->Validation->get_error_message();
+	}
+```
+
+
 #### todo list
 
-* service func: notify , 
+* common library   eg :user_agent, cache, image, cart , encrytion, parse ...
 
-* common library   eg : page , image ...
+* service  call run notify ... functions
 
-* filecache
-
-* security 
+* security input,output
 
 * ...
 
-i need you 
+join me :)
+
+

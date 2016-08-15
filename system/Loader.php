@@ -80,4 +80,20 @@ class Loader
 		$ci->db->init($_config[$pre]['host'], $_config[$pre]['username'], $_config[$pre]['passwd'], $_config[$pre]['dbname'], $_config[$pre]['port']);
 	}
 
+	/**
+	 * 加载 library
+	 * @param  string $library [description]
+	 * @return [type]          [description]
+	 */
+	public function library($library = '')
+	{
+		$library = ucfirst($library);
+
+		if( ! file_exists(SYSPATH . 'library' . '/' . $library . '.php')){
+			show_error("library not exist");
+		}
+		$ci =& get_instance();
+		$ci->$library = load_class($library, SYSPATH . 'library' . '/');
+	}
+
 }
