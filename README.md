@@ -108,6 +108,13 @@ Service-oriented php framework
 	$bar = $this->input->post('foo'); // get post data
 ```
 
+> input
+
+```
+	$bar = $this->input->post('foo'); // get post data
+	$user_agent = $this->input->user_agent();
+```
+
 #### library list
 
 * Pagination
@@ -140,7 +147,7 @@ Service-oriented php framework
 
 #### todo list
 
-* common library   eg :user_agent, filecache, image, cart , encrytion, parse, redisclient ...
+* common library   eg :filecache, image, cart , encrytion, parse, redisclient ...
 
 * service  call run notify ... functions
 

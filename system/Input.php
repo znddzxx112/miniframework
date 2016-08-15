@@ -32,6 +32,18 @@ class Input
 		return $this->_fetch_array($_POST, $index);
 	}
 
+	public function user_agent()
+	{
+		if( ! empty($_SERVER) && is_array($_SERVER))
+		{
+			foreach ($_SERVER as $key => $val) 
+			{
+				$_SERVER[$this->_clean_input_keys($key)] = $this->_clean_input_data($val);
+			}
+		}
+		return $this->_fetch_array($_SERVER, 'HTTP_USER_AGENT');
+	}
+
 	protected function _fetch_array(&$array, $index = '')
 	{
 		if( is_array($index))
