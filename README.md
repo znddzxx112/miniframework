@@ -115,12 +115,6 @@ Service-oriented php framework
 	$user_agent = $this->input->user_agent();
 ```
 
-* Security
-```
-	$this->load->library('Security');
-	$this->Security->xss_clean($str);
-```
-
 > cache/redis
 
 ```
@@ -164,6 +158,12 @@ Service-oriented php framework
 	if($valid_res == false){ // valid error msg
 		echo $this->Validation->get_error_message();
 	}
+```
+
+* Security
+```
+	$this->load->library('Security');
+	$this->Security->xss_clean($str);
 ```
 
 #### todo list
