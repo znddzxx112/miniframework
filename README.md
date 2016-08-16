@@ -115,13 +115,29 @@ Service-oriented php framework
 	$user_agent = $this->input->user_agent();
 ```
 
->cache
+* Security
+```
+	$this->load->library('Security');
+	$this->Security->xss_clean($str);
+```
+
+> cache/redis
 
 ```
 	config.php:
 	$config['cache']['driver'] = 'redis';
 	$config['cache']['host'] = '127.0.0.1';
 	$config['cache']['port'] = "6379";
+
+	$this->load->cache('redis');
+	$bar = $this->cache->get('foo');
+```
+
+> cache/file
+```
+	config.php:
+	$config['cache']['driver'] = 'file';
+	$config['cache']['root_dir'] = BASEPATH . 'cache/';
 
 	$this->load->cache('redis');
 	$bar = $this->cache->get('foo');
@@ -150,16 +166,9 @@ Service-oriented php framework
 	}
 ```
 
-* Security
-```
-	$this->load->library('Security');
-	$this->Security->xss_clean($str);
-```
-
-
 #### todo list
 
-* common library   eg :cache/file_driver, image, cart , encrytion, parse, ...
+* common library   eg :image, cart , encrytion, parse, ...
 
 * service  call run notify ... functions
 

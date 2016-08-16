@@ -50,3 +50,5 @@ $config['autoload_class'] = array('input');
 $config['cache']['driver'] = 'redis';
 $config['cache']['host'] = '127.0.0.1';
 $config['cache']['port'] = "6379";
+#cache file
+$config['cache']['root_dir'] = '';
