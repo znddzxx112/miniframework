@@ -128,6 +128,7 @@ Service-oriented php framework
 ```
 
 > cache/file
+
 ```
 	config.php:
 	$config['cache']['driver'] = 'file';
@@ -161,6 +162,7 @@ Service-oriented php framework
 ```
 
 * Security
+
 ```
 	$this->load->library('Security');
 	$this->Security->xss_clean($str);
