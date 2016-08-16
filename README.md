@@ -115,6 +115,18 @@ Service-oriented php framework
 	$user_agent = $this->input->user_agent();
 ```
 
+>cache
+
+```
+	config.php:
+	$config['cache']['driver'] = 'redis';
+	$config['cache']['host'] = '127.0.0.1';
+	$config['cache']['port'] = "6379";
+
+	$this->load->cache('redis');
+	$bar = $this->cache->get('foo');
+```
+
 #### library list
 
 * Pagination
@@ -147,7 +159,7 @@ Service-oriented php framework
 
 #### todo list
 
-* common library   eg :filecache, image, cart , encrytion, parse, redisclient ...
+* common library   eg :cache/file_driver, image, cart , encrytion, parse, ...
 
 * service  call run notify ... functions
 

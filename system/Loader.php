@@ -101,6 +101,29 @@ class Loader
 		$ci->$library = load_class($library, SYSPATH . 'library' . '/');
 	}
 
+	/**
+	 * 加载 cache
+	 * @param  [type] $cache [description]
+	 * @return [type]        [description]
+	 */
+	public function cache($pre = 'cache')
+	{
+		$_config = config_item();
+
+		if(! isset($_config[$pre]) )
+		{
+			show_error("cache config fail");
+		}
+
+		require SYSPATH . 'Cache.php';
+
+		$driver = $_config[$pre]['driver'] . '_driver.php';
+
+		$ci =& get_instance();
+		$ci->cache = load_class($driver, SYSPATH.'/cache_driver/');
+
+		$ci->cache->initialize(array($_config[$pre]['host'], $_config[$pre]['port']));
+	}
 
 	// -------------------------------------------------------------------
 	
