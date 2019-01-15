@@ -3,6 +3,8 @@
 #release
 $config['version'] = 'v0.0.1';
 
+$config['main_app'] = 'Mainapp';
+
 #index class
 $config['main_class'] = 'Main';
 
@@ -10,7 +12,7 @@ $config['main_class'] = 'Main';
 $config['main_method'] = 'index';
 
 #controller_path
-$config['controller_path'] = BASEPATH.'controller/';
+$config['controller_path'] = '/controller/';
 
 #composer
 $config['support_composer'] = false;#支持composer
@@ -44,7 +46,8 @@ $config['post_controller'] =  array(
 						);
 
 # autoload
-$config['autoload_class'] = array('input');
+//$config['autoload_class'] = array('Input');
+$config['autoload_class'] = array();
 
 #cache
 $config['cache']['driver'] = 'redis';

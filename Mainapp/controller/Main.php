@@ -14,7 +14,6 @@ class Main extends Controller
 
 	public function index()
 	{
-
 		$this->load->service('Tool_service');
 		$bar = $this->Tool_service->hello();
 

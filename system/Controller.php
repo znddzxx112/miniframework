@@ -11,7 +11,7 @@ class Controller
 	{
 		self::$instance =& $this;
 
-		$this->load = load_class('loader');
+		$this->load = load_class('Loader');
 	}
 
 	public static function &get_instance()

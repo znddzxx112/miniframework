@@ -21,7 +21,7 @@ if (! function_exists('load_class'))
 		}
 
 		if( ! file_exists($folder.$class.'.php')){
-			exit($class . ' not exists');
+			exit(__file__ .'-line:'. __line__ . ':' . $class . ' not exists');
 		}
 
 		require $folder.$class.'.php';

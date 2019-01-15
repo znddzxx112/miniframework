@@ -3,7 +3,7 @@
 	/**
 	 * 加载常用函数
 	 */
-	require SYSPATH.'common.php';
+	require SYSPATH.'Common.php';
 
 	/**
 	 * 错误处理函数
@@ -30,7 +30,7 @@
 	/**
 	 * 加载路由类
 	 */
-	$RTR = load_class('router');
+	$RTR = load_class('Router');
 
 	/**
 	 * 单例函数
@@ -58,13 +58,15 @@
 	/**
 	 * 实例化
 	 */
+	$app = $RTR->getApp();
+
 	$class = $RTR->getClass();
 	
 	$method = $RTR->getMethod();
 
 	$params = $RTR->getParams();
 
-	include( config_item('controller_path') . $class . '.php');
+	include( BASEPATH . $app . config_item('controller_path') . $class . '.php');
 
 	$class_instance = new $class();
 

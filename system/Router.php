@@ -6,6 +6,8 @@
 class Router
 {
 
+    private $app = '';
+
 	private $class  = '';
 
 	private $method = '';
@@ -16,6 +18,11 @@ class Router
 	{
 		$this->_fetch_class_method();
 	}
+
+	public function getApp()
+    {
+        return ucfirst($this->app);
+    }
 
 	public function getClass()
 	{
@@ -36,6 +43,7 @@ class Router
 	{
 		$request_info = $this->_parse_request_uri();
 		if(!empty($request_info)){
+		    $this->app = $request_info['app'];
 			$this->class = $request_info['class'];
 			$this->method = $request_info['method'];
 		}
@@ -64,27 +72,31 @@ class Router
 
 		if($uri === '')
 		{
+		    $app = config_item('main_app');
 			$class  = config_item('main_class');
 			$method = config_item('main_method');
 		}
 		elseif(strpos($uri, '/') === false)
 		{
-			$class = strtolower($uri);
+		    $app = strtolower($uri);
+			$class = config_item('main_class');
 			$method = config_item('main_method');
 		}
 		else
 		{
 			$uri_arr = explode('/', $uri);
-			$class = strtolower($uri_arr[0]);
-			$method = strtolower($uri_arr[1]);
+			$app = strtolower($uri_arr[0]);
+            $class = strtolower($uri_arr[1]);
+            $method = strtolower($uri_arr[2]);
 		}
 
 		// uri params
 		parse_str($query, $_GET);
 
 		return array(
+		        'app' => $app,
 				'class' => $class,
-				'method' => $method
+				'method' => $method,
 			);
 	}
 

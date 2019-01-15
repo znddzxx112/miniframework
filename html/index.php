@@ -14,6 +14,7 @@ define('ENV', 'development');
 switch (ENV) {
 case 'development':
 	error_reporting(E_ALL);
+	ini_set('display_errors', '1');
 	break;
 case 'testing':
 	error_reporting(E_ALL & ~E_NOTICE & ~E_ERROR & ~E_WARNING & ~E_PARSE);
@@ -26,9 +27,9 @@ case 'production':
 /**
  * 常量定义
  */
-define('BASEPATH' ,__dir__.'/');
+define('BASEPATH' ,__dir__.'/../');
 
-define('SYSPATH' ,__dir__.'/system/');
+define('SYSPATH' ,__dir__.'/../system/');
 
-require SYSPATH.'/miniframework.php';
+include SYSPATH.'miniframework.php';
 
