@@ -6,11 +6,11 @@
 class Router
 {
 
-    private $app = '';
+    private $app = 'mainapp';
 
-	private $class  = '';
+	private $class  = 'Main';
 
-	private $method = '';
+	private $method = 'index';
 
 	private $params = array();
 
@@ -21,7 +21,7 @@ class Router
 
 	public function getApp()
     {
-        return ucfirst($this->app);
+        return lcfirst($this->app);
     }
 
 	public function getClass()
@@ -31,7 +31,7 @@ class Router
 
 	public function getMethod()
 	{
-		return $this->method;
+		return ucfirst($this->method);
 	}
 
 	public function getParams()
@@ -72,15 +72,15 @@ class Router
 
 		if($uri === '')
 		{
-		    $app = config_item('main_app');
-			$class  = config_item('main_class');
-			$method = config_item('main_method');
+		    $app = $this->app;
+			$class  = $this->class;
+			$method = $this->method;
 		}
 		elseif(strpos($uri, '/') === false)
 		{
 		    $app = strtolower($uri);
-			$class = config_item('main_class');
-			$method = config_item('main_method');
+			$class = $this->class;
+			$method = $this->method;
 		}
 		else
 		{

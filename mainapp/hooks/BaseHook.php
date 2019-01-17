@@ -3,7 +3,7 @@
 /**
 * 
 */
-class Base_hook 
+class BaseHook
 {
 	
 	public function hello($param1, $param2, $param3)

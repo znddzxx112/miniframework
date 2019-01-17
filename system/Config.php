@@ -3,14 +3,6 @@
 #release
 $config['version'] = 'v0.0.1';
 
-$config['main_app'] = 'Mainapp';
-
-#index class
-$config['main_class'] = 'Main';
-
-#index method
-$config['main_method'] = 'index';
-
 #controller_path
 $config['controller_path'] = '/controller/';
 
@@ -29,19 +21,19 @@ $config['default']['port'] = "3306";
 #hook 
 $config['pre_controller_enable'] = false;
 $config['pre_controller'] = array(
-							'class'    => 'Base_hook',
+							'class'    => 'BaseHook',
 						    'function' => 'hello',
-						    'filename' => 'Base_hook.php',
-						    'filepath' => BASEPATH.'hooks/',
+						    'filename' => 'BaseHook.php',
+						    'filepath' => APPPATH.'/hooks/',
 						    'params'   => array('beer', 'wine', 'snacks')
 						);
 
 $config['post_controller_enable'] = false;
 $config['post_controller'] =  array(
-							'class'    => 'Base_hook',
+							'class'    => 'BaseHook',
 						    'function' => 'hello',
-						    'filename' => 'Base_hook.php',
-						    'filepath' => BASEPATH.'hooks/',
+						    'filename' => 'BaseHook.php',
+						    'filepath' => APPPATH.'/hooks/',
 						    'params'   => array('beer', 'wine', 'snacks')
 						);
 

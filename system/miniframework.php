@@ -10,27 +10,41 @@
 	 */
 	switch (ENV) {
 		case 'development':
-			
 			break;
-		
 		default:
 			set_error_handler("_error_handler");
 			break;
 	}
 
 	/**
-	 * suport composer
-	 */
-	$support_composer = config_item('support_composer');
-	if($support_composer === true)
-	{
-		file_exists(BASEPATH.'vendor/autoload.php') && require_once(BASEPATH.'vendor/autoload.php');
-	}
-
-	/**
 	 * 加载路由类
 	 */
 	$RTR = load_class('Router');
+
+    /**
+     * 实例化
+     */
+    $app = $RTR->getApp();
+
+    $class = $RTR->getClass();
+
+    $method = $RTR->getMethod();
+
+    $params = $RTR->getParams();
+
+    /**
+     * app path
+     */
+    define('APPPATH', BASEPATH.$app);
+
+    /**
+     * suport composer
+     */
+    $support_composer = config_item('support_composer');
+    if($support_composer === true)
+    {
+        file_exists(BASEPATH.'vendor/autoload.php') && require_once(BASEPATH.'vendor/autoload.php');
+    }
 
 	/**
 	 * 单例函数
@@ -54,17 +68,6 @@
 
 	// 执行 pre_controller
 	$EXT->call_hook('pre_controller');
-
-	/**
-	 * 实例化
-	 */
-	$app = $RTR->getApp();
-
-	$class = $RTR->getClass();
-	
-	$method = $RTR->getMethod();
-
-	$params = $RTR->getParams();
 
 	include( BASEPATH . $app . config_item('controller_path') . $class . '.php');
 

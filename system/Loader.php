@@ -53,15 +53,15 @@ class Loader
 	 */
 	public function view($view = '', $vars = array())
 	{
-		if( ! file_exists(BASEPATH.'view/'.$view.'.php')) {
-			show_error('view : '. $view .' not exists');
+		if( ! file_exists(APPPATH.'/view/'.$view.'.php')) {
+			show_error('view : '. APPPATH.'/view/'.$view .' not exists');
 		}
 
 		foreach ($vars as $key => $value) {
 			$$key = $value;
 		}
 
-		include(BASEPATH.'view/'.$view.'.php');
+		include(APPPATH.'/view/'.$view.'.php');
 	}
 
 	/**
